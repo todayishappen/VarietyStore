@@ -16,3 +16,5 @@ git push
 #io测试
 
 #LeeCode001
+
+#Redis配置，未完善

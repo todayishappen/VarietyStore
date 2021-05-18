@@ -3,6 +3,9 @@ package com.example.demo.service;
 import com.example.demo.dao.UserDao;
 import com.example.demo.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,6 +20,7 @@ public class UserService {
     /**
      * 根据名字查找用户
      */
+    @Cacheable(value = "user", key = "#name")
     public User selectUserByName(String name) {
         return userDao.findUserByName(name);
     }
@@ -24,6 +28,7 @@ public class UserService {
     /**
      * 查找所有用户
      */
+    @Cacheable(value = "allUser", key = "#root.target+#root.methodName")
     public List<User> selectAllUser() {
         return userDao.findAllUser();
     }
@@ -31,6 +36,7 @@ public class UserService {
     /**
      * 插入两个用户
      */
+    @CachePut(value = "user", key = "#user.id")
     public void insertService() {
         userDao.insertUser("SnailClimb", 22, 3000.0);
         userDao.insertUser("Daisy", 19, 3000.0);
@@ -39,7 +45,7 @@ public class UserService {
     /**
      * 根据id 删除用户
      */
-
+    @CacheEvict(value = "user", key = "#id")
     public void deleteService(int id) {
         userDao.deleteUser(id);
     }
