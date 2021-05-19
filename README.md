@@ -18,3 +18,5 @@ git push
 #LeeCode001
 
 #Redis配置，未完善
+
+#Redis配置完毕，测试可用

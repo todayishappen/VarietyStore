@@ -1,7 +1,12 @@
 package com.example.demo.model;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+//@AllArgsConstructor
+//@NoArgsConstructor
 public class User {
-    private int id;
+    private Integer id;
     private String name;
     private int age;
     private double money;
@@ -10,7 +15,7 @@ public class User {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
