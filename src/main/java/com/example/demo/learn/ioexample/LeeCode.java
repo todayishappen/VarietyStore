@@ -3,6 +3,7 @@ package com.example.demo.learn.ioexample;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Stack;
+import java.util.Vector;
 
 
 public class LeeCode {
@@ -103,6 +104,45 @@ public class LeeCode {
             }
         }
         return stack2.pop();
+    }
+
+    //斐波那契
+    public int fibonacii(int n) {
+        if (n <= 1)
+            return n;
+        //return fibonacii(n-1) + fibonacii(n-2);
+        int sum = 1;
+        int one = 0;
+        for (int i = 2; i <= n; i++) {
+            sum = sum + one;
+            one = sum - one;
+        }
+        return sum;
+    }
+
+     //寻找 旋转数组的最小数
+    public int foundStateArray(int[] stateArray){
+        if(stateArray.length<=0){
+            return 0;
+        }
+        int low =0;
+        int high = stateArray.length -1;
+        int mid =0;
+        while(low < high){
+            if(stateArray[low] < stateArray[high]){
+                return stateArray[low];
+            }
+            mid = low + (high - low)/2;
+            if(stateArray[low] > stateArray[mid]){
+                low = mid + 1;   //重要
+            }
+            else if(stateArray[high] > stateArray[mid]){
+                high = mid;
+            }
+            else
+                low ++;
+        }
+        return stateArray[low];
     }
 
 
