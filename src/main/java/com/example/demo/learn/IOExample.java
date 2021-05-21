@@ -1,4 +1,4 @@
-package com.example.demo.learn.ioexample;
+package com.example.demo.learn;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -20,6 +20,5 @@ public class IOExample{
             bw.write("测试"+(i+1));
         }
         bw.close();
-
     }
 }
