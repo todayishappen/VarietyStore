@@ -7,7 +7,7 @@ git init
 git status
 git pull origin master
 git pull
-git add .
+git add  
 git status
 git commit -m "描述"
 git push
