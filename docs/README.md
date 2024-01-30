@@ -1,3 +1,3 @@
-# Headline
+# Variety Store
 
 > An awesome project.
