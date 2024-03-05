@@ -1,6 +1,6 @@
 vue常用三个命令：
 
-~~~vue
+~~~shell
 ## Project setup
 ```
 npm install
@@ -75,5 +75,60 @@ Error: error:0308010C:digital envelope routines::unsupported
 
 使用工具：CentOS
 
+在本地对后端spring，前端vue打包：
 
+（1）后端：maven clean
+
+​                      maven package
+
+（2）前端：后台vue和前台vue
+
+​                      npm run build
+
+（3）在服务器上设置相关路径后，上传前后端包；
+
+（4）配置NGINX关联前后端：监听后端端口port，关联前端页面路径；
+
+
+
+```nginx
+
+   server {
+        listen      ${设置nginx代理端口号};
+        server_name  ${项目名};
+
+        #charset koi8-r;
+
+        #access_log  logs/host.access.log  main;
+
+        location / {
+            root   ${前台dist绝对路径};   
+            index  index.html index.htm;
+        }
+
+        location ^~/${后台管理路径} {
+            alias   ${后台管理dist绝对路径};
+            try_files $uri $uri/ /admin/index.html;
+        }
+
+
+        location /api/ {  #配置前后端关联，以及跨域问题
+            proxy_set_header Host $http_host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header REMOTE-HOST $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_pass http://${后端IP}:${后端port}/;
+        }
+        .....
+    }
+```
+
+
+
+（5）使用Java命令运行：
+
+```shell
+java -jar -Xms512M -Xmx512M -XX:PermSize=256M /xxxxx/xxxxx.jar --spring.config.location=/xxxxx
+/application.yml
+```
 
