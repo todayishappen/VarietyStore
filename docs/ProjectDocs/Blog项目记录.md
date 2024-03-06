@@ -75,15 +75,15 @@ Error: error: 0308010C: digital envelope routines:: unsupported
 
 使用工具：CentOS+JDK1.8+NGINX+node17.9.0
 
-在本地对后端 spring，前端 vue 打包：
+（1）在本地对后端 spring，前端 vue 打包：
 
-（1）后端：maven clean
+​	后端：maven clean
 
-​                      maven package
+​		   maven package
 
-（2）前端：后台 vue 和前台 vue
+​	前端：后台 vue 和前台 vue
 
-​                      npm run build
+​		    npm run build
 
 （3）在服务器上设置相关路径后，上传前后端包；
 
@@ -164,6 +164,8 @@ const router = new VueRouter({
 
 ​      更改点 3：在页面上使用“开发者工具”——Network 重新抓取当前页面数据，发现 index.html 为 "http://"，而 js，css 文件的 Request URL 请求均为 "https://"（本人申请的云服务器还未购买 SSL 证书，只有 http）。这种内外不一致的原因是 index.html 文件的一个配置导致的。
 
+​      将index.html中的https安全配置注释。
+
 ```html
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <!--此页面下的所有资源按照https打开，将其注释-->
@@ -187,9 +189,9 @@ module.exports = {
   ......
 ```
 
-​    更改点 2：在页面上使用“开发者工具”——console 存在报错“404 not found”
+​     更改点 2：在页面上使用“开发者工具”——console 存在报错“404 not found”
 
-​       index.js 文件中，检查 vue 路由方式，vue 路由，注释 history 选择默认 base，或者配置 base，否则页面无法连接后端导致查询不到数据显示空白。
+​     index.js 文件中，检查 vue 路由方式，vue 路由，注释 history 选择默认 base，或者配置 base，否则页面无法连接后端导致查询不到数据显示空白。
 
 ```vue
 const router = new VueRouter({
