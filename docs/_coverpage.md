@@ -1,4 +1,4 @@
-<!-- _coverpage.md -->
+<!-- _coverpage.md 封面 -->
 
 # Variety Store 
 

@@ -1,4 +1,6 @@
-## vue 常用三个命令：
+<!-- blog record 博客项目记录 -->
+
+## vue 常用三个命令
 
 ~~~shell
 ## Project setup
@@ -47,8 +49,8 @@ npm run build
 ##本地nodeJS.V17以下（不包含17）启动命令
 ## package.json
 "scripts": {
-  "serve": "SET NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve",
-  "build": "SET NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service build",
+  "serve": "vue-cli-service serve",
+  "build": "vue-cli-service build",
   "lint": "vue-cli-service lint"
 },
 ```
@@ -129,6 +131,8 @@ java -jar -Xms512M -Xmx512M -XX:PermSize=256M /xxxxx/xxxxx.jar --spring.config.l
 &ensp;&ensp;&ensp;&ensp;vue.config.js 文件中，检查 "publicPath" 参数，需要保持和 NGINX 配置一致。
 
 &ensp;&ensp;&ensp;&ensp;此 vue 配置表示 build 打包后的 index 内容中包含的 js，css 等文件路径为指定 publicPath 路径。否则页面会找不到文件，显示空白。
+&ensp;&ensp;&ensp;&ensp;但若添加此配置后所有页面加载文件(例如img)均为相对路径，否则获取异常。
+
 
 ```nginx
 location / {

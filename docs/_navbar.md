@@ -1,4 +1,4 @@
-<!-- _navbar.md -->
+<!-- _navbar.md 导航栏 -->
 
 * 链接到我  * [关于本人]
   * [Github地址](https://github.com/todayishappen)
