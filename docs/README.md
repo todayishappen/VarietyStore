@@ -21,18 +21,35 @@
 
 
 
-# 个人记录
+# 总目录
 
 * 项目记录
   * [Blog项目记录](/ProjectDocs/个人记录/项目记录/Blog项目记录.md) <!--注意这里是相对路径-->
+  * [blog-new项目记录](/ProjectDocs/个人记录/项目记录/blog-new项目记录.md)
 * 云服务器搭建记录
   * [docker搭建记录](/ProjectDocs/个人记录/云服务器搭建记录/docker搭建记录.md)
   * [Halo搭建记录](/ProjectDocs/个人记录/云服务器搭建记录/Halo搭建记录.md)
 
 
 
+```timeline
+# 个人记录
+
+## 2024-3-6
+### 首次搭建在线文档
+创建github项目记录：
+- blog项目记录
 
 
-Docsify部署
 
-* [Docsify部署教程](/ProjectDocs/Docsify部署教程.md)
+## 2024-3-25
+- 新增halo项目记录
+- 新增docker搭建记录
+
+
+
+## 2024-4-3
+### 项目变换
+- 项目版本升级，停用blog项目，并停止更新blog项目记录
+- 新增blog-new项目，新增blog-new项目记录，原Blog项目变更为Blog-old项目。
+
